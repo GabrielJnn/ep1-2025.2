@@ -1,5 +1,5 @@
 public abstract class Pessoa {
-    private String nome;
+    private String nome; // estou usando cpf porque nunca vamos fazer nenhuma operação com eles.
     private String cpf;
 
     public Pessoa(String nome, String cpf) {
