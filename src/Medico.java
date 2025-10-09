@@ -1,16 +1,18 @@
-public class Medico extends Pessoa { // Medico também herda de Pessoa
+public class Medico extends Pessoa {
     private String crm;
     private String especialidade;
+    private double custoConsulta;
 
-    // Construtor do Medico
-    public Medico(String nome, String cpf, String crm, String especialidade) {
-        // Novamente, mandamos nome e cpf para a classe mãe Pessoa resolver
+
+    public Medico(String nome, String cpf, String crm, String especialidade, double custoConsulta) {
         super(nome, cpf);
-        this.crm = crm; // crm é como se fosse um cpf para médicos
+        this.crm = crm;
         this.especialidade = especialidade;
+        this.custoConsulta = custoConsulta;
     }
-// Vai receber nome e cpf porque é uma pessoa.
-    // Getters e Setters para crm e especialidade
+
+    //getters e setters
+
     public String getCrm() {
         return crm;
     }
@@ -25,5 +27,14 @@ public class Medico extends Pessoa { // Medico também herda de Pessoa
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+
+    public double getCustoConsulta() {
+        return this.custoConsulta;
+    }
+
+    public void setCustoConsulta(double custoConsulta) {
+        this.custoConsulta = custoConsulta;
     }
 }

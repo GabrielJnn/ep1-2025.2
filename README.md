@@ -10,45 +10,55 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 
 ## Dados do Aluno
 
-- **Nome completo:** [Preencher aqui]
-- **Matrícula:** [Preencher aqui]
-- **Curso:** [Preencher aqui]
-- **Turma:** [Preencher aqui]
+- **Nome completo:** Gabriel José Neves de Resende
+- **Matrícula:** 251040087
+- **Curso:** Engenharias Unb gama fcte
+- **Turma:** 02 -> 25.2
 
 ---
 
 ## Instruções para Compilação e Execução
 
 1. **Compilação:**  
-   [Descrever aqui como compilar o projeto. Exemplo: `javac Main.java` ou o script usado]
+   A compilação é gerida automaticamente pela IDE. Não é necessário executar nenhum comando manual. Sempre que o projeto é executado (passo seguinte), a IDE garante que todos os ficheiros .java são compilados para ficheiros .class na pasta out/
 
 2. **Execução:**  
-   [Descrever aqui como executar o projeto. Exemplo: `java Main` ou o script usado]
+
+    1) Abra o projeto na sua IDE Java.
+
+    2) Navegue até o ficheiro src/Main.java.
+
+    3) Clique com o botão direito no ficheiro Main.java e selecione a opção "Run 'Main.main()'" ou clique no ícone de "play" que aparece ao lado do método main.
+
+    4) O programa será iniciado e o menu interativo aparecerá no terminal da IDE.
 
 3. **Estrutura de Pastas:**  
-   [Descrever aqui as principais pastas do projeto]
+   O projeto está organizado da seguinte forma:
+src/: Contém todo o código-fonte do projeto (os ficheiros .java).
+out/: Pasta gerada pela IDE que contém os ficheiros compilados (.class).
+Raiz do Projeto (/): Onde os ficheiros de dados (pacientes.csv, medicos.csv, etc.) são criados e lidos.
 
 3. **Versão do JAVA utilizada:**  
-   [Descrever aqui como versão do JAVA utilizada no projeto. Sugestão: `java 21`]
+   O projeto foi desenvolvido e testado com Java 17 mas funciona com versões mais recentes.
 
 ---
 
 ## Vídeo de Demonstração
 
-- [Inserir o link para o vídeo no YouTube/Drive aqui]
+- https://drive.google.com/drive/folders/1AjfD0DRKM7OrFwKvDwXvaOmiaNYqB6T1?usp=sharing
 
 ---
 
 ## Prints da Execução
 
 1. Menu Principal:  
-   ![Inserir Print 1](caminho/do/print1.png)
+   ![img.png](img.png)
 
 2. Cadastro de Médico:  
-   ![Inserir Print 2](caminho/do/print2.png)
+   ![img_1.png](img_1.png)(caminho/do/print2.png)
 
-3. Relatório de ?:  
-   ![Inserir Print 3](caminho/do/print3.png)
+3. Relatórios:     
+   Listar Pacientes;![img_3.png](img_3.png)Listar Médicos;![](img_4.png)Ver Detalhes de Consulta;![img_5.png](img_5.png)Relatório de Pacientes Internados;![img_6.png](img_6.png)Relatório de Consultas Agendadas![img_7.png](img_7.png)
 
 ---
 
@@ -56,13 +66,25 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 
 ## Observações (Extras ou Dificuldades)
 
-- [Espaço para o aluno comentar qualquer funcionalidade extra que implementou, dificuldades enfrentadas, ou considerações importantes.]
+Durante o desenvolvimento, o maior desafio técnico foi, sem dúvida, a implementação da persistência de dados (a capacidade de salvar e carregar as informações).
+
+O Principal Desafio
+O problema principal era: como salvar em ficheiros de texto simples (.csv) as relações complexas entre os objetos? Por exemplo, uma Consulta não é apenas texto; ela está ligada a um objeto Paciente e a um objeto Medico. Salvar apenas os nomes não seria suficiente.
+
+A Solução Implementada
+A solução foi criar uma classe dedicada, GerenciadorDeArquivos, com uma estratégia clara:
+
+Salvar Usando Identificadores: Ao salvar uma consulta ou internação, em vez de tentar salvar o objeto inteiro, o sistema guarda apenas os identificadores únicos (CPF do paciente, CRM do médico, número do quarto). Isto manteve os ficheiros de dados simples e organizados.
+
+Carregar em Ordem Lógica: Ao iniciar o programa, o sistema primeiro carrega todas as "peças" (Pacientes, Médicos, Quartos). Só depois é que ele carrega os "eventos" (Consultas, Internações). Para cada evento, ele usa os identificadores (CPF, CRM) para "reconectar" e reconstruir o objeto Consulta ou Internacao com as ligações corretas aos objetos já existentes na memória.
+
+Esta abordagem garantiu que todas as relações fossem preservadas entre as sessões do programa, tornando a "memória" do sistema fiável e robusta.
 
 ---
 
 ## Contato
 
-- [Opcional: E-mail pessoal do aluno.]
+- gabriel.jn.resende@gmail.com
 
 ---
 

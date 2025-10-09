@@ -1,5 +1,3 @@
-// No arquivo Consulta.java
-
 public class Consulta {
 
     private Paciente paciente;
@@ -34,7 +32,6 @@ public class Consulta {
 public boolean ativas(){
        return status.equals("Agendada");
 }
-//vou fazer um contador de ativas na main
 
 // Getters
     /*não terá Setters pois caso seja nescessario mudar alguma informaçao na consulta
@@ -64,5 +61,8 @@ public boolean ativas(){
         return prescricao;
     }
 
+    public boolean isAtiva() {
+        return this.status.equals("Agendada");
+    }
 
 }

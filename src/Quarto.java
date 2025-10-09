@@ -15,7 +15,7 @@ public class Quarto {
 // não precisa de setters porque não será preciso mudar o numero de um quarto.
 
 
-    public boolean info() {
+    public boolean isOcupado() {
         return this.ocupado; //saber se está vazio ou ocupado
     }
 
